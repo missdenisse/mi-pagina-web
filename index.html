@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Página Personalizada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Habbo Lookbook</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://abs.twimg.com/emoji/v2/svg/1f31f.svg" type="image/svg+xml">
 </head>
 <body>
 
+    <!-- Menú de navegación superior -->
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="sobremi.html">Sobre mí</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="#">Outfits</a>
+        <a href="#">Coleccionables</a>
     </nav>
 
-    <hr>
+    <!-- Tarjeta Principal: Outfit Destacado -->
+    <main class="tarjeta-principal">
+        <span class="etiqueta-cute">★ Look del Día ★</span>
+        <h1>Mi Habbo Wardrobe</h1>
+        <p>Bienveni@ a mi clóset virtual. Aquí comparto mis outfits, combinaciones y estilos favoritos.</p>
+        
+      <div class="contenedor-avatar">
+    <img src="emily.png" alt="Look del Día: Emily El cadáver de la novia" class="avatar-img" style="max-width: 150px; border-radius: 10px;">
+</div>
+        <button class="boton-tarjeta">Ver Galería Completa</button>
+    </main>
 
-    <h1>¡Mi nueva página web con estilo!</h1>
+    <!-- Seccion de tarjetas con prendas u otros outfits -->
+    <section class="seccion-outfits">
+        <h2>Mis Estilos Favoritos</h2>
+        <div class="grid-outfits">
+            
+            <div class="tarjeta-item">
+                <div class="badge-item">Casual</div>
+                <h3>Rosa Cozy</h3>
+                <p>Perfecto para estar en el departamento o tomar un té virtual.</p>
+            </div>
 
-    <p>Este es un párrafo donde el texto se lee muy bien sobre el fondo rosa pastel.</p>
+            <div class="tarjeta-item">
+                <div class="badge-item">Especial</div>
+                <h3>Noche de Gala</h3>
+                <p>Estilo elegante con tonos violetas y destellos brillantes.</p>
+            </div>
 
-    <!-- TARJETA DE DESTACADO A ANCHO COMPLETO Y CENTRADA -->
-    <div class="tarjeta">
-        <img src="https://picsum.photos/600/250" alt="Imagen destacada">
-        <h2>Proyecto Destacado</h2>
-        <p>Esta es una tarjeta diseñada con CSS para resaltar contenido especial dentro de la página web.</p>
-        <a href="#" class="boton-tarjeta">Ver más</a>
-    </div>
-<!-- SCRIPT PARA LOS BRILLOS MÁGICOS EN EL CURSOR -->
+            <div class="tarjeta-item">
+                <div class="badge-item">Pastel</div>
+                <h3>Suéter de Lana</h3>
+                <p>Un look super abrigado y cute para días de lluvia.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script de los destellos mágicos -->
     <script>
         let ultimoTiempo = 0;
-
         document.addEventListener('mousemove', function(e) {
             let tiempoActual = Date.now();
-            
-            // Controla la velocidad para que no salgan demasiadas estrellas juntas
             if (tiempoActual - ultimoTiempo > 40) { 
                 let destello = document.createElement('div');
                 destello.className = 'cursor-destello';
@@ -41,11 +66,9 @@
                 destello.style.top = e.pageY + 'px';
                 document.body.appendChild(destello);
 
-                // Elimina el destello después de que termine la animación
                 setTimeout(function() {
                     destello.remove();
                 }, 800);
-
                 ultimoTiempo = tiempoActual;
             }
         });

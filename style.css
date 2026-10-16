@@ -1,128 +1,181 @@
-/* Configuración general de la página */
+/* Configuración general con fondo de Habbooween */
 body {
-    background-color: #ffd1dc; /* Fondo rosa pastel */
-    font-family: Arial, sans-serif;
+    background-color: #1a0f2e; 
+    background-image: url('habboween.png'); /* Asegúrate de que el nombre coincida exactamente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    font-family: 'Poppins', sans-serif, Arial;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todo horizontalmente */
-    justify-content: center; /* Centra todo verticalmente en la pantalla */
-    min-height: 100vh;
-    box-sizing: border-box;
+    align-items: center;
 }
 
-/* Espacio y contenedor para los botones superiores */
+/* Menú de navegación flotante superior */
 nav {
-    margin-bottom: 15px;
-    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 10px 15px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Botones violetas del menú */
 nav a {
-    background-color: #8A2BE2; /* Color violeta */
-    color: white !important; /* Forzamos la letra blanca */
+    color: #ffffff;
+    background-color: #8a2be2; 
     padding: 10px 20px;
-    text-decoration: none; /* Quita el subrayado azul por defecto */
-    border-radius: 6px;
     margin: 0 5px;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-/* Títulos y párrafos centrados */
-h1 {
-    color: #4b0082;
-    text-align: center;
-    font-size: 26px;
-    margin: 10px 0;
-}
-
-p {
-    color: #333333;
-    font-size: 16px;
-    text-align: center;
-    margin: 5px 0 20px 0;
-}
-
-/* Línea divisoria */
-hr {
-    width: 100%;
-    max-width: 700px;
-    border: 1px solid #e0b0bc;
-    margin-bottom: 20px;
-}
-
-/* Tarjeta proporcional al ancho y largo, y perfectamente centrada */
-.tarjeta {
-    background-color: white;
-    width: 90%;
-    max-width: 600px; /* Tamaño proporcional máximo */
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.tarjeta h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    color: #4b0082;
-}
-
-.tarjeta p {
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.tarjeta img {
-    width: 100%;
-    max-height: 200px; /* Tamaño proporcional para que no sea muy alta */
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Botón violeta dentro de la tarjeta */
-.boton-tarjeta {
-    display: inline-block;
-    background-color: #8A2BE2;
-    color: white !important;
-    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 20px;
     font-weight: bold;
-    font-size: 15px;
-}
-/* EFECTO HOVER: Cambia de color y hace un pequeño zoom al pasar el mouse */
-nav a:hover, .boton-tarjeta:hover {
-    background-color: #6a1bb9; /* Un tono de violeta un poco más oscuro */
-    transform: scale(1.05);     /* Efecto de zoom sutil */
-    transition: 0.3s ease;     /* Hace que el movimiento sea suave */
-}
-/* Estilo para los destellos mágicos del cursor en rosa brillante */
-.cursor-destello {
-    position: absolute;
-    width: 12px; /* Un poquito más grandes para que destellen mejor */
-    height: 12px;
-    background-color: #ff1493; /* Rosa profundo y brillante (Deep Pink) */
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Forma de estrellita */
-    pointer-events: none;
-    box-shadow: 0 0 12px #ff69b4, 0 0 22px #ff1493; /* Resplandor intenso de luz rosa */
-    animation: brilloMagico 0.8s ease-out forwards;
-    transform: translate(-50%, -50%);
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Animación de destello y expansión suave */
-@keyframes brilloMagico {
-    0% {
-        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2) rotate(180deg);
-        opacity: 0;
-    }
+nav a:hover {
+    background-color: #9b30ff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 15px rgba(248, 200, 220, 0.8), 0 0 25px rgba(138, 43, 226, 0.6);
+}
+
+/* Tarjeta Principal con el mismo efecto de vidrio oscuro que la sección inferior */
+.tarjeta-principal {
+    background: rgba(30, 15, 50, 0.65); /* Mismo fondo morado oscuro transparente */
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 35px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(248, 200, 220, 0.2);
+    border: 2px solid rgba(248, 200, 220, 0.3); /* Mismo borde suave */
+    margin-bottom: 120px; /* Mantiene el espacio para requerir scroll */
+}
+
+/* Ajustes de texto para excelente legibilidad sobre el fondo oscuro */
+.tarjeta-principal h1 {
+    color: #ffd1dc; /* Rosa pastel brillante para destacar */
+    margin-top: 10px;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.tarjeta-principal p {
+    color: #ffffff; /* Texto descriptivo en blanco limpio */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+.etiqueta-cute {
+    background-color: #ffe4e1;
+    color: #d87093;
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la foto del avatar de Emily */
+.contenedor-avatar {
+    margin: 20px 0;
+}
+
+.contenedor-avatar img, .avatar-img {
+    max-width: 160px;
+    border-radius: 18px;
+    border: 3px solid #f8c8dc;
+    background-color: #2b1b3a;
+    padding: 8px;
+    box-shadow: 0 8px 20px rgba(106, 27, 185, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.contenedor-avatar img:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Botón Violeta Restaurado de la Tarjeta */
+.boton-tarjeta {
+    background-color: #8a2be2;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.boton-tarjeta:hover {
+    background-color: #9b30ff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 15px rgba(248, 200, 220, 0.8), 0 0 25px rgba(138, 43, 226, 0.6);
+}
+
+/* Segunda Sección (Mis Estilos Favoritos con Scroll) */
+.seccion-outfits {
+    max-width: 850px;
+    width: 90%;
+    margin-bottom: 80px;
+    text-align: center;
+    background: rgba(30, 15, 50, 0.65);
+    padding: 30px;
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(248, 200, 220, 0.3);
+}
+
+.seccion-outfits h2 {
+    color: #ffd1dc;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.grid-outfits {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta-item {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    padding: 20px;
+    width: 210px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #f8c8dc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(255, 209, 220, 0.4);
+}
+
+.badge-item {
+    background-color: #e6e6fa;
+    color: #6a1bb9;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
