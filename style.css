@@ -1,0 +1,128 @@
+/* Configuración general de la página */
+body {
+    background-color: #ffd1dc; /* Fondo rosa pastel */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    justify-content: center; /* Centra todo verticalmente en la pantalla */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Espacio y contenedor para los botones superiores */
+nav {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Botones violetas del menú */
+nav a {
+    background-color: #8A2BE2; /* Color violeta */
+    color: white !important; /* Forzamos la letra blanca */
+    padding: 10px 20px;
+    text-decoration: none; /* Quita el subrayado azul por defecto */
+    border-radius: 6px;
+    margin: 0 5px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Títulos y párrafos centrados */
+h1 {
+    color: #4b0082;
+    text-align: center;
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+p {
+    color: #333333;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px 0 20px 0;
+}
+
+/* Línea divisoria */
+hr {
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #e0b0bc;
+    margin-bottom: 20px;
+}
+
+/* Tarjeta proporcional al ancho y largo, y perfectamente centrada */
+.tarjeta {
+    background-color: white;
+    width: 90%;
+    max-width: 600px; /* Tamaño proporcional máximo */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.tarjeta h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #4b0082;
+}
+
+.tarjeta p {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.tarjeta img {
+    width: 100%;
+    max-height: 200px; /* Tamaño proporcional para que no sea muy alta */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Botón violeta dentro de la tarjeta */
+.boton-tarjeta {
+    display: inline-block;
+    background-color: #8A2BE2;
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* EFECTO HOVER: Cambia de color y hace un pequeño zoom al pasar el mouse */
+nav a:hover, .boton-tarjeta:hover {
+    background-color: #6a1bb9; /* Un tono de violeta un poco más oscuro */
+    transform: scale(1.05);     /* Efecto de zoom sutil */
+    transition: 0.3s ease;     /* Hace que el movimiento sea suave */
+}
+/* Estilo para los destellos mágicos del cursor en rosa brillante */
+.cursor-destello {
+    position: absolute;
+    width: 12px; /* Un poquito más grandes para que destellen mejor */
+    height: 12px;
+    background-color: #ff1493; /* Rosa profundo y brillante (Deep Pink) */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Forma de estrellita */
+    pointer-events: none;
+    box-shadow: 0 0 12px #ff69b4, 0 0 22px #ff1493; /* Resplandor intenso de luz rosa */
+    animation: brilloMagico 0.8s ease-out forwards;
+    transform: translate(-50%, -50%);
+}
+
+/* Animación de destello y expansión suave */
+@keyframes brilloMagico {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2) rotate(180deg);
+        opacity: 0;
+    }
+}

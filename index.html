@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página Personalizada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="sobremi.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <hr>
+
+    <h1>¡Mi nueva página web con estilo!</h1>
+
+    <p>Este es un párrafo donde el texto se lee muy bien sobre el fondo rosa pastel.</p>
+
+    <!-- TARJETA DE DESTACADO A ANCHO COMPLETO Y CENTRADA -->
+    <div class="tarjeta">
+        <img src="https://picsum.photos/600/250" alt="Imagen destacada">
+        <h2>Proyecto Destacado</h2>
+        <p>Esta es una tarjeta diseñada con CSS para resaltar contenido especial dentro de la página web.</p>
+        <a href="#" class="boton-tarjeta">Ver más</a>
+    </div>
+<!-- SCRIPT PARA LOS BRILLOS MÁGICOS EN EL CURSOR -->
+    <script>
+        let ultimoTiempo = 0;
+
+        document.addEventListener('mousemove', function(e) {
+            let tiempoActual = Date.now();
+            
+            // Controla la velocidad para que no salgan demasiadas estrellas juntas
+            if (tiempoActual - ultimoTiempo > 40) { 
+                let destello = document.createElement('div');
+                destello.className = 'cursor-destello';
+                destello.style.left = e.pageX + 'px';
+                destello.style.top = e.pageY + 'px';
+                document.body.appendChild(destello);
+
+                // Elimina el destello después de que termine la animación
+                setTimeout(function() {
+                    destello.remove();
+                }, 800);
+
+                ultimoTiempo = tiempoActual;
+            }
+        });
+    </script>
+</body>
+</html>
