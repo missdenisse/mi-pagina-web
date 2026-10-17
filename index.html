@@ -3,75 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Habbo Lookbook</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mi Habbo Wardrobe | Lookbook & Estilos</title>
+    <!-- Favicon de estrellita cute -->
     <link rel="icon" href="https://abs.twimg.com/emoji/v2/svg/1f31f.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Menú de navegación superior -->
+    <!-- Menú de navegación flotante -->
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="#">Outfits</a>
-        <a href="#">Coleccionables</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#outfits">Outfits</a>
+        <a href="#coleccionables">Coleccionables</a>
     </nav>
 
-    <!-- Tarjeta Principal: Outfit Destacado -->
-    <main class="tarjeta-principal">
-        <span class="etiqueta-cute">★ Look del Día ★</span>
+    <!-- Tarjeta Principal -->
+    <main class="tarjeta-principal" id="inicio">
         <h1>Mi Habbo Wardrobe</h1>
+        <span class="etiqueta-cute">★ Look del Mes ★</span>
         <p>Bienveni@ a mi clóset virtual. Aquí comparto mis outfits, combinaciones y estilos favoritos.</p>
         
-      <div class="contenedor-avatar">
-    <img src="emily.png" alt="Look del Día: Emily El cadáver de la novia" class="avatar-img" style="max-width: 150px; border-radius: 10px;">
-</div>
-        <button class="boton-tarjeta">Ver Galería Completa</button>
+        <div class="contenedor-avatar">
+            <img src="emily.png" alt="Look del Mes: Emily El cadáver de la novia" class="avatar-img">
+        </div>
+
+        <button class="boton-tarjeta" onclick="document.getElementById('outfits').scrollIntoView({behavior: 'smooth'});">
+            Ver Galería Completa
+        </button>
     </main>
 
-    <!-- Seccion de tarjetas con prendas u otros outfits -->
-    <section class="seccion-outfits">
+    <!-- Segunda Sección: Mis Estilos Favoritos (visible con scroll) -->
+    <section class="seccion-outfits" id="outfits">
         <h2>Mis Estilos Favoritos</h2>
+        
         <div class="grid-outfits">
-            
-            <div class="tarjeta-item">
-                <div class="badge-item">Casual</div>
+            <article class="tarjeta-item">
+                <span class="badge-item">Casual</span>
                 <h3>Rosa Cozy</h3>
                 <p>Perfecto para estar en el departamento o tomar un té virtual.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta-item">
-                <div class="badge-item">Especial</div>
+            <article class="tarjeta-item">
+                <span class="badge-item">Especial</span>
                 <h3>Noche de Gala</h3>
                 <p>Estilo elegante con tonos violetas y destellos brillantes.</p>
-            </div>
+            </article>
 
-            <div class="tarjeta-item">
-                <div class="badge-item">Pastel</div>
+            <article class="tarjeta-item">
+                <span class="badge-item">Pastel</span>
                 <h3>Suéter de Lana</h3>
-                <p>Un look super abrigado y cute para días de lluvia.</p>
-            </div>
-
+                <p>Un look super mego abrigado y cute para días de lluvia.</p>
+            </article>
         </div>
     </section>
 
-    <!-- Script de los destellos mágicos -->
-    <script>
-        let ultimoTiempo = 0;
-        document.addEventListener('mousemove', function(e) {
-            let tiempoActual = Date.now();
-            if (tiempoActual - ultimoTiempo > 40) { 
-                let destello = document.createElement('div');
-                destello.className = 'cursor-destello';
-                destello.style.left = e.pageX + 'px';
-                destello.style.top = e.pageY + 'px';
-                document.body.appendChild(destello);
-
-                setTimeout(function() {
-                    destello.remove();
-                }, 800);
-                ultimoTiempo = tiempoActual;
-            }
-        });
-    </script>
 </body>
 </html>
